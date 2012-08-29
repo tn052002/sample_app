@@ -5,7 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development, :test do
+group :development, :test, :cucumber do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.10.0'
 end
@@ -25,8 +25,17 @@ end
 
 gem 'jquery-rails', '2.1.1'
 
-group :test do
+group :test, :cucumber do
   gem 'capybara', '1.1.2'
+end
+
+group :cucumber do
+  gem 'cucumber-rails', '0.3.2'
+  gem 'cucumber', '1.1.0'
+  gem 'headless'
+  gem 'database_cleaner'
+  gem 'spork'
+  gem 'launchy'
 end
 
 group :production do
